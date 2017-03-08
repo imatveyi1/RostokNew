@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" >
+<title> Title</title>
+<style rel="stylesheet" type="text/css">
+
+a {color:#000;}
+a:hover {text-decoration:none;}
+a:visited {color:#000;}
+
+
+
+.photo {width:960px; height: 240px; text-align:center; position:relative; margin:0 auto; overflow: hidden;}
+
+.photo ul.topic {padding:0; margin:0; list-style:none; width:960px; height:100%; position:relative; }
+
+.photo ul.topic li { width:125px; height:31px; float:left;}
+
+
+.photo ul.topic li a ul,
+.photo ul.topic li ul
+{display:none;}
+
+
+
+.photo ul.topic li.active ul
+{display:block; position:absolute; left:0;  list-style:none; padding:0;  padding-top: 20px; height:auto;  width:960px;  z-index:1;}
+
+.photo ul.topic li a:hover ul, 
+.photo ul.topic li:hover ul
+{display:block; position:absolute; left:0;list-style:none; padding:0; padding-top: 20px;  height:auto;  width:960px;   z-index:10;}
+
+.photo ul.topic li ul li
+{display:inline; width:112px; height:87px; float:left; border:1px solid #fff; margin:1px;}
+
+.photo ul.topic li ul li a
+{display:block; width:110px; height:85px; cursor:default; float:left; text-decoration:none; }
+
+.photo ul.topic li ul li a img
+{display:block; width:100px; height:75px; border:5px solid #eee;}
+
+.photo ul.topic li a:hover ul li a:hover, 
+.photo ul.topic li:hover ul li a:hover 
+{white-space:normal; position:relative;}
+
+.photo ul.topic li a:hover ul li a:hover img, 
+.photo ul.topic li:hover ul li a:hover img 
+{position:absolute; left:-50px; top:-32px; width:200px; height:150px; border-color:#fff;}
+</style>
+
+
+</head>
+
+<body>
+
+<div class="photo" >
+<ul class="topic">
+
+
+	<li class="active">
+
+		<ul>
+			<li><a href="Resourse/Photo/1.jpg"><img src="Resourse/Photo/1.jpg" alt="" title="" /></a></li>
+			<li><a href="Resourse/Photo/2.jpg"><img src="Resourse/Photo/2.jpg" alt="" title="" /></a></li>
+			<li><a href="Resourse/Photo/3.jpg"><img src="Resourse/Photo/3.jpg" alt="" title="" /></a></li>
+			<li><a href="Resourse/Photo/4.jpg"><img src="Resourse/Photo/4.jpg" alt="" title="" /></a></li>
+			<li><a href="Resourse/Photo/5.jpg"><img src="Resourse/Photo/5.jpg" alt="" title="" /></a></li>
+			<li><a href="Resourse/Photo/6.jpg"><img src="Resourse/Photo/6.jpg" alt="" title="" /></a></li>
+			<li><a href="Resourse/Photo/7.jpg"><img src="Resourse/Photo/7.jpg" alt="" title="" /></a></li>
+			<li><a href="Resourse/Photo/8.jpg"><img src="Resourse/Photo/8.jpg" alt="" title="" /></a></li>
+			<li><a href="Resourse/Photo/9.jpg"><img src="Resourse/Photo/9.jpg" alt="" title="" /></a></li>
+			<li><a href="Resourse/Photo/10.jpg"><img src="Resourse/Photo/10.jpg" alt="" title="" /></a></li>
+
+		</ul>
+
+	</li>
+
+</ul>
+</div>
+
+
+</body>
+</html>

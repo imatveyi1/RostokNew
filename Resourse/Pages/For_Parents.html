@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" >
+    <title> Title</title>
+    <style rel="stylesheet" type="text/css">
+
+        a {color:#000;}
+        a:hover {text-decoration:none;}
+        a:visited {color:#000;}
+
+
+
+        .photo {width:960px; height: 360px; text-align:center; position:relative; margin:0 auto; overflow: hidden;}
+
+        .photo ul.topic {padding:0; margin:0; list-style:none; width:960px; height:100%; position:relative; }
+
+        .photo ul.topic li { width:125px; height:31px; float:left;}
+
+
+        .photo ul.topic li a ul,
+        .photo ul.topic li ul
+        {display:none;}
+
+
+
+        .photo ul.topic li.active ul
+        {display:block; position:absolute; left:0;  list-style:none;  padding-top: 20px; height:auto;  width:960px;  z-index:1;}
+
+        .photo ul.topic li a:hover ul,
+        .photo ul.topic li:hover ul
+        {display:block; position:absolute; left:0;list-style:none;  padding-top: 20px;  height:auto;  width:960px;   z-index:10;}
+
+        .photo ul.topic li ul li
+        {display:inline; width:112px; height:97px; float:left; border:1px solid #fff; margin:1px; padding-left: 10px;}
+
+        .photo ul.topic li ul li a
+        {display:block; width:85px; height:95px; cursor:default; float:left; text-decoration:none; }
+
+        .photo ul.topic li ul li a img
+        {display:block; width:85px; height:85px; border:5px solid #eee;}
+
+        .photo ul.topic li a:hover ul li a:hover,
+        .photo ul.topic li:hover ul li a:hover
+        {white-space:normal; position:relative;}
+
+        .photo ul.topic li a:hover ul li a:hover img,
+        .photo ul.topic li:hover ul li a:hover img
+        {position:absolute; left:-50px; top:-32px; width:350px; height:350px; border-color:#fff;}
+        #Project {
+            width: 960px;
+            margin:auto;
+            height: 100%;
+            overflow: hidden;
+            position: relative;
+            font-size: 14pt;
+        }
+        .textcontant { display: block;
+            width: 960px;
+            height: 100%;
+            font-family: "SansSerif", sans-serif;
+        }
+    </style>
+
+
+</head>
+
+<body>
+<div id="Project" class="textcontant"><h2> Для подготовки к программе "Росток" мы рекомендуем литературу: </h2> </div>
+<div class="photo" >
+    <ul class="topic">
+
+
+        <li class="active">
+
+            <ul>
+                <li><a href="Resourse/Photo/11.jpg"><img src="Resourse/Photo/11.jpg" alt="" title="" /></a></li>
+                <li><a href="Resourse/Photo/12.jpg"><img src="Resourse/Photo/12.jpg" alt="" title="" /></a></li>
+                <li><a href="Resourse/Photo/13.jpg"><img src="Resourse/Photo/13.jpg" alt="" title="" /></a></li>
+                <li><a href="Resourse/Photo/14.jpg"><img src="Resourse/Photo/14.jpg" alt="" title="" /></a></li>
+                <li><a href="Resourse/Photo/16.jpg"><img src="Resourse/Photo/16.jpg" alt="" title="" /></a></li>
+                <li><a href="Resourse/Photo/15.jpg"><img src="Resourse/Photo/15.jpg" alt="" title="" /></a></li>
+
+            </ul>
+
+        </li>
+
+    </ul>
+</div>
+
+
+</body>
+</html>

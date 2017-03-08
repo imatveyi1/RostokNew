@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta   charset="UTF-8">
+    <title>Росток</title>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+    <style rel="stylesheet" type="text/css">
+
+body{ background: rgba(255,255,255,1);
+    background: -moz-linear-gradient(left, rgba(255,255,255,1) 0%, rgba(169,233,218,1) 100%);
+    background: -webkit-linear-gradient(left, rgba(255,255,255,1) 0%, rgba(169,233,218,1) 100%);
+    background: -o-linear-gradient(left, rgba(255,255,255,1) 0%, rgba(169,233,218,1) 100%);
+    background: -ms-linear-gradient(left, rgba(255,255,255,1) 0%, rgba(169,233,218,1) 100%);
+    background: linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(169,233,218,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#a9e9da', GradientType=1 );}
+    header { background-image: url("Resourse/Photo/Untitled-1.png");
+        margin: 0px;
+        height: 486px;
+        width:100%;
+    }
+   
+    @font-face {
+        font-family: Augusta Two, Proun; /* Имя шрифта */
+        src: url(Resourse/Fonts/AugustaTwo.ttf), url(Resourse/Fonts/ProunNormal.Ttf);/* Путь к файлу со шрифтом */
+    }
+#Hello {
+    font-family: "SansSerif", sans-serif;
+
+
+}
+#HelloBlock {
+    font-family: "Augusta Two", serif;
+color: #eeeeee;
+    position: absolute;
+    padding-left:40px;
+   padding-top:140px;
+}
+    #logo {
+        margin-left:0px;
+        margin-top:0px;
+        float:left;
+    }
+    #footer {
+        background-color: #0c9051;
+        width: 100%;
+        height: 50px;
+        font-family: "Augusta Two", serif;
+        font-size: 18pt;
+        color: #eeeeee;
+    }
+    .textfooter{position: absolute;
+        left:150px;
+         }
+    #nav{margin-left: 150px;
+        padding-top: 0px;
+
+       font-size:18pt;
+       float:left;
+       font-family: "Augusta Two", serif;
+       list-style: none;
+
+
+   }
+        #nav a {
+            text-decoration: none;
+            color: #e4f4eb;
+        }
+    #nav a:hover{
+        background: linear-gradient(to top,#744b16 ,#a0ba62);
+        opacity: 0.8;
+    }
+    #nav a:active{
+        background: linear-gradient(to top, #744b16,#a0ba62);
+        opacity: 1.0;
+    }
+    .content {
+        float: left;
+        width: 502px;
+        height: 283px;
+    }
+    .textcontant { display: block;
+        width: 960px;
+        height: 100%;
+    }
+    #wrapper {
+        width: 1506px;
+        position: relative;
+       left: 0px;
+        transition: left .5s ease-in-out;
+    }
+
+
+        #contantContainer {
+            width: 502px;
+            height: 283px;
+          overflow: hidden;
+            position: relative;
+            left: 145px;
+            top: 75px;
+
+        }
+        #textContainer {
+            width: 960px;
+            margin:auto;
+            height: 100%;
+            position: relative;
+
+         }
+
+    #navLinks {
+        text-align: center;
+        width: 502px;
+        padding-top: 100px;
+        padding-left: 500px;
+    }
+    #navLinks ul {
+        margin: 0px;
+
+        display: inline-block;
+        margin-top: 6px;
+    }
+    #navLinks ul li {
+        float: left;
+        text-align: center;
+        margin: 10px;
+        list-style: none;
+        cursor: pointer;
+        background-color: #CCCCCC;
+        padding: 5px;
+        border-radius: 50%;
+        border: #0c9051 5px solid;
+    }
+    #navLinks ul li:hover {
+        background-color: #a7520f;
+    }
+    #navLinks ul li.active {
+        background-color: #a7520f;
+        color: #FFFFFF;
+        outline-width: 7px;
+    }
+    #navLinks ul li.active:hover {
+        background-color: #a7520f;
+        color: #FFFFFF;
+    }
+    .modalDialog {
+        position: fixed;
+        font-family: Arial, Helvetica, sans-serif;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: rgba(0,0,0,0.8);
+        z-index: 99999;
+        -webkit-transition: opacity 400ms ease-in;
+        -moz-transition: opacity 400ms ease-in;
+        transition: opacity 400ms ease-in;
+        display: none;
+        pointer-events: none;
+    }
+    .modalDialog:target {
+        display: block;
+        pointer-events: auto;
+    }
+
+    .modalDialog > div {
+        width: 1000px;
+        position: relative;
+        margin: 10% auto;
+        padding: 5px 20px 13px 20px;
+        border-radius: 10px;
+        background: #fff;
+        background: -moz-linear-gradient(#fff, #6b996c);
+        background: -webkit-linear-gradient(#fff, #539953);
+        background: -o-linear-gradient(#fff, #6b9952);
+    }
+    .close {
+        background: #606061;
+        color: #FFFFFF;
+        line-height: 25px;
+        position: absolute;
+        right: -12px;
+        text-align: center;
+        top: -10px;
+        width: 24px;
+        text-decoration: none;
+        font-weight: bold;
+        -webkit-border-radius: 12px;
+        -moz-border-radius: 12px;
+        border-radius: 12px;
+        -moz-box-shadow: 1px 1px 3px #000;
+        -webkit-box-shadow: 1px 1px 3px #000;
+        box-shadow: 1px 1px 3px #000;
+    }
+
+    .close:hover { background: #a7520f; }
+
+#modal {
+    font-size: 20pt;
+    font-family: "Augusta Two", serif;
+    text-align: center;
+}
+        #text{
+            font-size: 14pt;
+            font-family: "Serif", serif;
+            text-align: justify;
+        }
+    #nav ul{
+
+        list-style:none;
+
+        position:absolute;
+
+        left:-9999px; /* Скрываем за экраном, когда не нужно (данный метод лучше, чем display:none;) */
+
+        opacity:0; /* Устанавливаем начальное состояние прозрачности */
+
+        -webkit-transition:0.25s linear opacity; /* В Webkit выпадающие пункты будут проявляться */
+
+    }
+    #nav li{
+        float: left;
+    margin-right: 15px;
+    position: relative;
+    display: block;
+
+    }
+    #nav ul li{
+
+        padding-top:1px; /* Вводим отступ между li чтобы создать иллюзию разделенных пунктов меню */
+        float:none;
+    }
+    #nav ul a{
+        white-space:nowrap; /* Останавливаем перенос текста и создаем многострочный выпадающий пункт */
+        display:block;
+    }
+    #nav li:hover ul{ /* Выводим выпадающий пункт при наведении курсора */
+        left:0; /* Приносим его обратно на экран, когда нужно */
+        opacity:1; /* Делаем непрозрачным */
+    }
+    #nav li:hover a{ /* Устанавливаем стили для верхнего уровня, когда выводится выпадающий список */
+        background: linear-gradient(to top,#744b16 ,#a0ba62); /* Выглядит полупрозрачным */
+        text-decoration:none;
+    }
+    #nav li:hover ul a{ /* Изменяем некоторые стили верхнего уровня при выводе выпадающего пункта */
+        text-decoration:none;
+        -webkit-transition:-webkit-transform 0.075s linear;
+    }
+    #nav li:hover ul li a:hover{ /* Устанавливаем стили для выпадающих пунктов, когда курсор наводится на конкретный пункт */
+        background: linear-gradient(to top,#744b16 ,#a0ba62); /* Будет полупрозрачным */
+        text-decoration:none;
+        -moz-transform:scale(1.05);
+        -webkit-transform:scale(1.05);
+    }
+    </style>
+</head>
+<body>
+<header>
+    <script>
+        function showContent(link) {
+
+            var cont = document.getElementById('textContainer');
+
+
+            var http = createRequestObject();
+            console.log(http);
+            if( http )
+            {
+                http.open('get', link);
+                http.onreadystatechange = function ()
+                {
+                    console.log(http);
+                    if(http.readyState == 4)
+                    {
+                        console.log(http);
+                        cont.innerHTML = http.responseText;
+                    }
+                }
+                http.send(null);
+            }
+            else
+            {
+                document.location = link;
+            }
+        }
+
+        // создание ajax объекта
+        function createRequestObject()
+        {
+            try { console.log("!!!!!!"); return new XMLHttpRequest(); }
+            catch(e)
+            {
+
+                log.error(e);
+                try { return new ActiveXObject('Msxml2.XMLHTTP') }
+                catch(e)
+                {
+                    log.error(e);
+                    try { return new ActiveXObject('Microsoft.XMLHTTP') }
+                    catch(e) { log.error(e); return null; }
+                }
+            }
+        }
+    </script>
+    <img src="Resourse/Photo/Logo.png" id="logo"/>
+
+    <ul id="nav">
+        <li><a href="index.html" >Главная</a></li>
+        <li><a href="#" onclick="showContent('Resourse/Pages/About_Project.html')">О проекте</a></li>
+        <li><a href="#">Галерея</a>
+        <ul>
+            <li>
+             <a href="#" onclick="showContent('Resourse/Pages/Photo.html')" >Фото</a>
+            </li>
+            <li><a href="#" onclick="showContent('Resourse/Pages/Video.html')"> Видео</a> </li>
+        </ul>
+
+        </li>
+        <li><a class="nav" href="#" onclick="showContent('Resourse/Pages/For_Parents.html')">Родителям</a></li>
+    </ul>
+    <div id="HelloBlock"> <h1>Добро пожаловать!</h1> <h2> Вы на главной странице сайта программы "Росток".</h2> <h2>Хотите узнать о нас больше?</h2> <h2>Переходте по ссылкам меню!</h2></div>
+    <div id="contantContainer">
+        <div id="wrapper">
+    <div id="One" class="content"><a href="#openModal"><img  name="change"  src="Resourse/Photo/1.png"/></a></div>
+    <div id="Two" class="content"><a href="#openModal1"><img   name="change"  src="Resourse/Photo/Podgotovit'.png"/></a></div>
+    <div id="Three" class="content"><a href="#openModal2"><img name="change"  src="Resourse/Photo/Globus.png"/></a></div>
+        </div>
+    </div>
+    <div id="navLinks">
+        <ul>
+            <li class="itemLinks" data-pos="0px"></li>
+            <li class="itemLinks" data-pos="-502px"></li>
+            <li class="itemLinks" data-pos="-1004px"></li>
+        </ul>
+    </div>
+
+    <script src="http://www.kirupa.com/prefixfree.min.js"></script>
+    <script type="text/javascript">
+        // просто запрашиваем DOM... будто просим разрешение у босса!
+        var links = document.querySelectorAll(".itemLinks");
+        var wrapper = document.querySelector("#wrapper");
+
+        // activeLink обеспечивает метку для активного элемента
+        var activeLink = 0;
+
+        // устанавливаем отслеживание событий
+        for (var i = 0; i < links.length; i++) {
+            var link = links[i];
+            link.addEventListener('click', setClickedItem, false);
+
+            // определяем элемент для activeLink
+            link.itemID = i;
+        }
+
+        // устанавливаем первый элемент в качестве активного
+        links[activeLink].classList.add("active");
+
+        function setClickedItem(e) {
+            removeActiveLinks();
+
+            var clickedLink = e.target;
+            activeLink = clickedLink.itemID;
+
+            changePosition(clickedLink);
+        }
+
+        function removeActiveLinks() {
+            for (var i = 0; i < links.length; i++) {
+                links[i].classList.remove("active");
+            }
+        }
+
+        // Обработчик изменяет позицию слайдера, после того, как мы убедились,
+        // что в качестве активной обозначена нужная нам ссылка.
+        function changePosition(link) {
+            link.classList.add("active");
+
+            var position = link.getAttribute("data-pos");
+            wrapper.style.left = position;
+        }
+    </script>
+
+    <div id="openModal" class="modalDialog">
+        <div id="Dialog1">
+            <a href="#close" title="Закрыть" class="close">X</a>
+            <h2 id="modal">За и Против</h2>
+            <p id="text">Основной плюс программы «Росток» в том, что ребенок учится нестандартно мыслить и отходит от
+                стереотипов. «Если человек выглядит как бомж и пахнет как бомж, значит, он и есть бомж, считает
+                большинство из нас. Но это может оказаться и человек, просто попавший в беду, и эксцентричный миллионер,
+                - говорит Елена Смирнова. – У детей из «Ростка» алгоритмы решения математических задач экстраполируются
+                на решение любых других задач и вопросов. Отсутствие стандартов переносится и на обыденную жизнь. В
+                итоге, из них вырастают интересные люди, которые, обладая мощным логическим мышлением, начинает просчитывать любые житейские ситуации».</p>
+            <p id="text"> <ul id="text">
+            <li>По системе «Росток» не рекомендуют заниматься детям с хроническими заболеваниями. Такой ребенок может
+                быть очень умным, обладать огромным творческим потенциалом, но в силу того, что он не очень здоров,
+                нагрузки для него могут оказаться чрезмерными. Отсюда – быстрая утомляемость, снижение внимания и как результат – отставание по программе. Поэтому его лучше отдать, скажем, в школу искусств.
+            </li>
+            <li> Еще одна проблема (свойственная, впрочем, всем спецшколам) – завышенные требования родителей к своему
+                ребенку. Как правило, это родители, которые сами не реализовались полностью, а теперь требуют от ребенка невозможного, тем самым, создавая для него стрессовые
+                ситуации.
+            </li>
+            <li> Переход в «Росток» ребенка из другой школы решается индивидуально. У такого школьника должен быть
+                хороший умственный и творческий потенциал, иначе переход может стать для него слишком сильным стрессом.
+                Впрочем, учителя-практики говорят, что умный ребенок адаптируется в этой системе за месяц-другой и тоже начинает
+                показывать хорошие результаты.
+            </li>
+        </ul>
+            </p>
+        </div>
+    </div>
+    <div id="openModal1" class="modalDialog">
+        <div id="Dialog2">
+            <a href="#close" title="Закрыть" class="close">X</a>
+            <h2 id="modal1">Готовимся к "Ростку"</h2>
+            <p id="text1"> Как же подготовить дошкольника к нагрузке в "Ростке"? На самом деле, все очень просто. Для того чтобы ребенок постепенно привык к заданиям, родителям следует приобрести рекомендованную литературу (подробнее в блоке "Родителям"). Благодаря этому, ребенок сразу начнет заниматься по Петерсону, разовьет логическое мышление и способность к анализу.</p>
+            <p id="text2">Задания в книгах представлены самые разные-задачи на счет, логику, абстрактное мышление, нестандартный подход. Литературу рекомендуется подбирать по возрасту ребенка, однако начинать всегда следует с базового уровня, даже если ребенок старше. Занимайтесь дома, сначала по несколько заданий в день, затем-по странице и дольше. Начните заниматься вместе, чуть освоившись, ребенок сможет выполнять задания сам и приносить маме или папе на проверку.</p>
+            <p id="text3"> Если ребенку трудно или неинтересно, он не может сконцентрироваться или решить простые задачи, постарайтесь мягко выяснить, что ему не нравится. Не спешите ставить крест на "Ростке", возможно ребенку сложно воспринимать информацию зрительно и ему необходима ваша помощь.</p>
+            <p id="text4"> За год до первого класса настоятельно рекомендуется записать ребенка на подготовительные курсы. Сделать это можно, обратившись по телефону ниже или в школе №47. Наши педагоги-опытные психологи, способны найти подход к каждому ребенку, определить уровень его готовности к "Ростку" и помочь освоить материал максимально эффективно.  </p>
+        </div>
+    </div>
+    <div id="openModal2" class="modalDialog">
+        <div id="Dialog3">
+            <a href="#close" title="Закрыть" class="close">X</a>
+            <h2 id="modal2">Карта</h2>
+            <p id="text5">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2642.4127126263734!2d35.05485541519537!3d48.52532193205492!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d958ea327d1a01%3A0xf9f0edde5bc0528c!2z0KHRgNC10LTQvdGP0Y8g0L7QsdGJ0LXQvtCx0YDQsNC30L7QstCw0YLQtdC70YzQvdCw0Y8g0YjQutC-0LvQsCDihJYgNDcg0YEg0YPQs9C70YPQsdC70LXQvdC90YvQvCDQuNC30YPRh9C10L3QuNC10Lwg0LjQvdC-0YHRgtGA0LDQvdC90YvRhSDRj9C30YvQutC-0LIg0Lgg0YTQuNC30LjQutC-LdC80LDRgtC10LzQsNGC0LjRh9C10YHQutC-0LPQviDQv9GA0L7RhNC40LvRjw!5e0!3m2!1sru!2sua!4v1488830014219" width="1000" height="400"  frameborder="0" style="border:0" allowfullscreen></iframe>
+                 </p>
+        </div>
+    </div>
+
+</header>
+<div id="textContainer">
+        <div id="Hello" class="textcontant"> <strong> <p> Программа "Росток" - лучший выбор для родителей, которые хотят научить своего
+            ребенка не только читать, писать и зубрить информацию, но и думать, анализировать, формировать свое мнение и,
+            конечно, подходить к решениям задач нестандартно. Статистика гласит: украинские школьники,
+            которые учатся по программе "Росток" минимум в два раза опережают своих сверстников по уровню интеллекта,
+            способности критически мыслить и скорости анализа полученной информации. Наши дети способны сразу отделить главное от второстепенного,
+            сформировав таким образом логическу. цепочку, которую легко применить на практике. </p></strong> <strong> <p>Наши ученики регулярно занимают призовые места на
+            различных олимпиадах, в частности по математике, физике, украинскому языку. В дальнейшем, учащийся легко
+            поступает в ведущие вузы Украины, Европы, Америки, успешно сдав экзамены. </p></strong> <strong> <p>Будущее - за логикой.
+            Сомневаетесь? Тогда мы с удовольствием ознакомим вас с информацией о программе.</p> </strong>
+            </div>
+</div>
+<footer id="footer"><strong class="textfooter">  За дополнительной информацией обращайтесь по номеру т. +38 (095) 7337875, Яна Вячеславовна </strong> </footer>
+
+</body>
+</html>
